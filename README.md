@@ -1,19 +1,8 @@
 # m-scheme-eschqr
 
 M Scheme Eschqr<br> 
-S<br>
-c<br>
-h<br>
-e<br>
-m<br>
-e<br>
- <br>
-E<br>
-s<br>
-c<br>
-h<br>
-q<br>
-r<br>
+Scheme<br>
+Eschqr<br>
 
 
 ---

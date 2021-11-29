@@ -1,1 +1,13 @@
-.vscode
+# whitelist
+/*
+!/.gitignore
+!/CNAME
+!/README.md
+!/index.html
+!/contest.scm
+!/m-scheme-eschqr
+!/url*
+!/*png
+!/gen-scm-qr.py
+!/gen-site-qr.py
+!/img-to-scm.py
