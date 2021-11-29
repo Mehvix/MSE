@@ -1,8 +1,8 @@
 # MSE
 
-M Scheme Eschqr<br> 
+M Scheme EschQR<br> 
 Scheme<br>
-Eschqr<br>
+EschQR<br>
 
 
 ---
@@ -19,9 +19,11 @@ from a series which -->
 set of meaningless symbols
 is a strange loop, which, -->
 
-> ...sketching hands create<br>
+> ...[drawing hands](https://en.wikipedia.org/wiki/Drawing_Hands) create<br>
 > meaningless symbols which form <br>
-> strange loops, just as hands...<br>
-...sketching hands create
-meaningless symbols which form 
-strange loops, just as hands...
+> [strange loops](https://en.wikipedia.org/wiki/Strange_loop), just as hands...<br>
+
+---
+
+
+![](flowchart.png)

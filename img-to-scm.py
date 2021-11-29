@@ -28,10 +28,10 @@ scheme = f"\
 ;;;\n\
 ;;; Please do not include your name or personal info in this file.\n\
 ;;;\n\
-;;; Title: MSE: MSE Scheme Eschqr\n\
+;;; Title: MSE: MSE Scheme EschQR\n\
 ;;;\n\
 ;;; Description:\n\
-;;;   <...sketching hands create\n\
+;;;   <...drawing hands create\n\
 ;;;    meaningless symbols which form\n\
 ;;;    strange loops, just as hands...>\n\
 \n\

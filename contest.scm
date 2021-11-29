@@ -2,10 +2,10 @@
 ;;;
 ;;; Please do not include your name or personal info in this file.
 ;;;
-;;; Title: MSE: MSE Scheme Eschqr
+;;; Title: MSE: MSE Scheme EschQR
 ;;;
 ;;; Description:
-;;;   <...sketching hands create
+;;;   <...drawing hands create
 ;;;    meaningless symbols which form
 ;;;    strange loops, just as hands...>
 
