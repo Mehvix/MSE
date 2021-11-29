@@ -1,22 +1,21 @@
 from PIL import Image
-import numpy as np
+from numpy import array
+from requests import get
 
 
 def draw(x, y):
     return f"(px {SCALE[x]} {SCALE[y]})"
 
 
-# todo clean this whole file up later
-FNAME = "url-qr.png"
+URL = f"https://mse.mehvix.com/url-qr.png"
 COLOR = '"black"'
 QR_SIZE = 23
-CANVAS_SIZE = 800
+CANVAS_SIZE = (800 // QR_SIZE) * QR_SIZE
 PX = CANVAS_SIZE // QR_SIZE
 SCALE = list(range(-QR_SIZE // 2, QR_SIZE // 2))
-print(SCALE)
 
-img = Image.open(FNAME)
-arr = np.array(img).tolist()
+img = Image.open(get(URL, stream=True).raw)
+arr = array(img).tolist()[::-1]  # unflip
 moves = []
 for y, r in enumerate(arr):
     for x, c in enumerate(r):
@@ -24,7 +23,6 @@ for y, r in enumerate(arr):
             moves.append(draw(x, y))
 
 moves_str = "\n  ".join(moves)
-
 scheme = f"\
 ;;; Scheme Recursive Art Contest Entry\n\
 ;;;\n\
