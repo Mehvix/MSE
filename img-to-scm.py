@@ -31,9 +31,9 @@ scheme = f"\
 ;;; Title: MSE: MSE Scheme Eschqr\n\
 ;;;\n\
 ;;; Description:\n\
-;;;   <strange loop emerging\n\
-;;;    from a series of symbols\n\
-;;;    that form another>\n\
+;;;   <...sketching hands create\n\
+;;;    meaningless symbols which form\n\
+;;;    strange loops, just as hands...>\n\
 \n\
 (define (draw)\n\
   (ht)\n\

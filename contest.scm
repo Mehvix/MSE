@@ -5,9 +5,9 @@
 ;;; Title: MSE: MSE Scheme Eschqr
 ;;;
 ;;; Description:
-;;;   <strange loop emerging
-;;;    from a series of symbols
-;;;    that form another>
+;;;   <...sketching hands create
+;;;    meaningless symbols which form
+;;;    strange loops, just as hands...>
 
 (define (draw)
   (ht)

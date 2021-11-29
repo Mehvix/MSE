@@ -22,3 +22,6 @@ is a strange loop, which, -->
 > ...sketching hands create<br>
 > meaningless symbols which form <br>
 > strange loops, just as hands...<br>
+...sketching hands create
+meaningless symbols which form 
+strange loops, just as hands...
