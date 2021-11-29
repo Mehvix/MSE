@@ -1,29 +1,30 @@
+import qrcode
 from PIL import Image
 from numpy import array
-from requests import get
 
-
-def draw(x, y):
-    return f"(px {SCALE[x]} {SCALE[y]})"
-
-
-URL = f"https://mse.mehvix.com/url-qr.png"
-COLOR = '"black"'
 QR_SIZE = 23
 CANVAS_SIZE = (800 // QR_SIZE) * QR_SIZE
 PX = CANVAS_SIZE // QR_SIZE
 SCALE = list(range(-QR_SIZE // 2, QR_SIZE // 2))
 
-img = Image.open(get(URL, stream=True).raw)
-arr = array(img).tolist()[::-1]  # unflip
+qr = qrcode.QRCode(
+    border=1, version=1, error_correction=qrcode.constants.ERROR_CORRECT_L
+)
+qr.add_data("mse.mehvix.com")
+img = qr.make_image(fit=True)
+img = img.resize((23, 23), Image.NEAREST)
+arr = array(img).tolist()[::-1]  # unmirror
+
 moves = []
 for y, r in enumerate(arr):
     for x, c in enumerate(r):
         if not c:
-            moves.append(draw(x, y))
+            moves.append(f"(px {SCALE[x]} {SCALE[y]})")
 
 moves_str = "\n  ".join(moves)
-scheme = f"\
+with open("contest.scm", "w") as fout:
+    fout.write(
+        f'\
 ;;; Scheme Recursive Art Contest Entry\n\
 ;;;\n\
 ;;; Please do not include your name or personal info in this file.\n\
@@ -42,12 +43,9 @@ scheme = f"\
   (exitonclick))\n\
 \n\
 (define (px x y)\n\
-  (pixel x y {COLOR})\n\
+  (pixel x y "black")\n\
 )\n\
 ; Please leave this last line alone.  You may add additional procedures above\n\
 ; this line.\n\
-(draw)\n\
-"
-
-with open("contest.scm", "w") as fout:
-    fout.write(scheme)
+(draw)'
+    )

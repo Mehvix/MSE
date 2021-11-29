@@ -11,5 +11,5 @@
 !/gen-scm-qr.py
 !/gen-site-qr.py
 !/gen-py-qr.py
-!/img-to-scm.py
+!/img*.py
 doodle*
