@@ -6,8 +6,8 @@
 ;;;
 ;;; Description:
 ;;;   <...drawing hands create
-;;;    meaningless symbols which form
-;;;    strange loops, just as hands...>
+;;;    a strange loop from meaningless
+;;;    symbols, just as hands...>
 
 (define (draw)
   (ht)

@@ -32,8 +32,8 @@ scheme = f"\
 ;;;\n\
 ;;; Description:\n\
 ;;;   <...drawing hands create\n\
-;;;    meaningless symbols which form\n\
-;;;    strange loops, just as hands...>\n\
+;;;    a strange loop from meaningless\n\
+;;;    symbols, just as hands...>\n\
 \n\
 (define (draw)\n\
   (ht)\n\
