@@ -9,9 +9,7 @@ try:
     PX = CANVAS_SIZE // QR_SIZE
     SCALE = list(range(-QR_SIZE // 2, QR_SIZE // 2))
 
-    qr = qrcode.QRCode(
-        border=1, version=1, error_correction=qrcode.constants.ERROR_CORRECT_L
-    )
+    qr = qrcode.QRCode(border=1, error_correction=qrcode.constants.ERROR_CORRECT_H)
     qr.add_data("mse.mehvix.com")
     img = qr.make_image(fit=True)
     img = img.resize((23, 23), Image.NEAREST)
