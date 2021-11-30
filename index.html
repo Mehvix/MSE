@@ -12,7 +12,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>M. Scheme EschQR</title>
+        <title>MSE: M. Scheme EschQR</title>
 
         <style>
             body,
@@ -22,18 +22,31 @@
                 text-align: center;
             }
             img {
-                /* this may be the first time I've used border */
-                border: 5px;
-                max-width: 100%;
-                max-height: 100%;
+                padding: 10px;
+                max-width: 95%;
+                max-height: 95%;
 
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
             }
         </style>
+
+        <script src="flip.js"></script>
     </head>
     <body>
+        <img src="py-qr-reg.png" id="QR" /><br />
+        <div>
+            <b>NOTE:</b> iPhones have a(n especially) hard time scanning this
+            large a QR. You may have better success using a third party app.
+        </div>
+        <input
+            type="checkbox"
+            name="ck"
+            id="ck"
+            onclick="flippy()"
+            style="margin-top: 1em"
+        />Un-minified QR Code
         <blockquote>
             ...<a href="https://en.wikipedia.org/wiki/Drawing_Hands"
                 >drawing hands</a
@@ -46,7 +59,6 @@
             from meaningless<br />
             symbols, just as hands...
         </blockquote>
-        <img src="py-qr.png" /><br />
         <a href="http://github.com/Mehvix/mse">GitHub</a><br /><br /><br />
     </body>
 </html>

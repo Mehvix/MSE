@@ -1,6 +1,6 @@
 # MSE
 
-MSE Scheme EschQR<br> 
+M. Scheme EschQR<br> 
 Scheme<br>
 EschQR<br>
 

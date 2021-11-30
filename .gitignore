@@ -1,15 +1,20 @@
 # whitelist
 /*
+
 !/.gitignore
 !/CNAME
 !/README.md
 !/index.html
-!/contest.scm
-!/m-scheme-EschQR
+
 !/url*
-!/*png
-!/gen-scm-qr.py
-!/gen-site-qr.py
 !/gen-py-qr.py
+!/*py-qr*
 !/img*.py
+
+!/*.png
+!/*.scm
+!/*.sh
+!/*.js
+
+# blacklist
 doodle*
