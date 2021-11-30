@@ -2,29 +2,34 @@ try:
     from PIL import Image
     from numpy import array
     import qrcode
+except ImportError:
+    from os import system
 
-    # todo minify consts in minfile
-    QR_SIZE = 23
-    CANVAS_SIZE = (800 // QR_SIZE) * QR_SIZE
-    PX = CANVAS_SIZE // QR_SIZE
-    SCALE = list(range(-QR_SIZE // 2, QR_SIZE // 2))
+    # install reqs and run itself inside itself -- this probably isn't the best way to do this, but it's fitting given the program
+    system(f"python -m pip install Pillow numpy qrcode && python {__file__}")
+    exit()
 
-    qr = qrcode.QRCode(border=1)
-    qr.add_data("mse.mehvix.com")
-    img = qr.make_image(fit=True)
-    img = img.resize((23, 23), Image.NEAREST)
-    arr = array(img).tolist()[::-1]  # unmirror
+QR_SIZE = 23
+CANVAS_SIZE = (800 // QR_SIZE) * QR_SIZE
+PX = CANVAS_SIZE // QR_SIZE
+SCALE = list(range(-QR_SIZE // 2, QR_SIZE // 2))
 
-    moves = []
-    for y, r in enumerate(arr):
-        for x, c in enumerate(r):
-            if not c:
-                moves.append(f"(px {SCALE[x]} {SCALE[y]})")
+qr = qrcode.QRCode(border=1)
+qr.add_data("mse.mehvix.com")
+img = qr.make_image(fit=True)
+img = img.resize((23, 23), Image.NEAREST)
+arr = array(img).tolist()[::-1]  # unmirror
 
-    moves_str = "\n  ".join(moves)
-    with open("contest.scm", "w") as fout:
-        fout.write(
-            f'\
+moves = []
+for y, r in enumerate(arr):
+    for x, c in enumerate(r):
+        if not c:
+            moves.append(f"(px {SCALE[x]} {SCALE[y]})")
+
+moves_str = "\n  ".join(moves)
+with open("contest.scm", "w") as fout:
+    fout.write(
+        f'\
 ;;; Scheme Recursive Art Contest Entry\n\
 ;;;\n\
 ;;; Please do not include your name or personal info in this file.\n\
@@ -48,8 +53,4 @@ try:
 ; Please leave this last line alone.  You may add additional procedures above\n\
 ; this line.\n\
 (draw)'
-        )
-except ImportError:
-    from os import system
-
-    system(f"python -m pip install Pillow numpy qrcode && python {__file__}")
+    )

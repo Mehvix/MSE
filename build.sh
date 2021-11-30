@@ -12,9 +12,11 @@ GEN="img-to-scm.py"
 log "Removing contest.scm..."
 command rm contest.scm
 log "Minifying $GEN..."
-command pyminifier -o $TMP --lzma $GEN # todo pipe to log
+command pyminifier -o $TMP --lzma $GEN
 MIN="img-min.py"
 command head -n -1 $TMP >$MIN
+log "Uninstalling qrcode package with pip..."
+command yes | python -m pip uninstall qrcode
 log "Evaluating Python code to get scheme..."
 command python $GEN >/dev/null
 log "Generating QR of min and reg Python..."
